@@ -91,6 +91,7 @@ def plot_history(history, save_path: str):
     axes[1].legend()
 
     plt.tight_layout()
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
     plt.savefig(save_path, dpi=120)
     plt.close()
 
@@ -112,6 +113,7 @@ def plot_confusion_matrix(y_true, y_pred, class_names, save_path: str):
                     color="white" if cm[i, j] > cm.max() / 2 else "black")
     plt.colorbar(im)
     plt.tight_layout()
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
     plt.savefig(save_path, dpi=120)
     plt.close()
 
