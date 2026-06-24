@@ -169,6 +169,7 @@ def run_pipeline():
     X_train_vec = vectorizer(X_train).numpy()
     X_test_vec  = vectorizer(X_test).numpy()
 
+    os.makedirs(PROCESSED_DIR, exist_ok=True)
     np.save(os.path.join(PROCESSED_DIR, "X_train.npy"), X_train_vec)
     np.save(os.path.join(PROCESSED_DIR, "X_test.npy"),  X_test_vec)
     np.save(os.path.join(PROCESSED_DIR, "y_train.npy"), y_train)
