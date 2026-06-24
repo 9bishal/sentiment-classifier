@@ -158,6 +158,7 @@ def run_training():
     plot_history(history, PLOT_PATH)
     plot_confusion_matrix(y_test, y_pred, class_names, CM_PATH)
 
+    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
     model.save(MODEL_PATH)
     print(f"Model saved to {MODEL_PATH}")
     return model
